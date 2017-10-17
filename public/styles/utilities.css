@@ -1,0 +1,13 @@
+.clear-float:before,
+.clear-float:after  {
+  display: table;
+  content: '';
+}
+
+.clear-float:after {
+  clear: all;
+}
+
+.clear-float {
+  *zoom: 1;
+}
