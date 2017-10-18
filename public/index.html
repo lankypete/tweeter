@@ -22,6 +22,15 @@
     <!-- Utilities CSS -->
     <link rel="stylesheet" type="text/css" href="/styles/utilities.css">
 
+    <!-- moment.js -->
+    <script type="text/javascript" src="https://momentjs.com/downloads/moment.min.js"></script>
+
+    <!-- handlebars -->
+    <script type="text/javascript" src="http://builds.handlebarsjs.com.s3.amazonaws.com/handlebars-v4.0.11.js"></script>
+
+    <!-- helper js functions -->
+    <script type="text/javascript" src="/scripts/functions.js"></script>
+
     <!-- External JS -->
     <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
 
@@ -58,24 +67,28 @@
 
       </div>
 
-      <section class="tweet">
-        <header class="tweet__header">
-          <img src="http://lorempixel.com/300/200" />
-          <span class="tweet__user-name">G Jones</span>
-          <span class="tweet__user-account">@GJones</span>
-        </header>
-        <article class="tweet__body">
-          <div>let me get 140 characters around approximately on the money.  why do you say it's on the money.. like it's so right that it's worth somehtin</div>
-        </article>
-        <footer class="tweet__footer">
-          <div class="tweet__age">10 days ago</div>
-          <div class="tweet__actions">
-            <img src="/images/repost.png" alt="actions repost">
-            <img src="/images/flag.png" alt="actions flag">
-            <img src="/images/heart.png" alt="actions heart">
-          </div>
-        </footer>
-      </section>
+      <script id="tweet-template" type="text/x-handlebars-template">
+
+        <section class="tweet">
+          <header class="tweet__header">
+            <img src="{{usr.avatars.regular}}" />
+            <span class="tweet__user-name">{{usr.name}}</span>
+            <span class="tweet__user-account">{{usr.handle}}</span>
+          </header>
+          <article class="tweet__body">
+            <div>{{tweetBody}}</div>
+          </article>
+          <footer class="tweet__footer">
+            <div class="tweet__age">{{created}}</div>
+            <div class="tweet__actions">
+              <img src="/images/repost.png" alt="actions repost">
+              <img src="/images/flag.png" alt="actions flag">
+              <img src="/images/heart.png" alt="actions heart">
+            </div>
+          </footer>
+        </section>
+
+      </script>
 
     </main>
 

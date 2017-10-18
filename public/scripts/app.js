@@ -1,53 +1,4 @@
 $(function() {
-
-
-  function createTweetElement(data) {
-    const usr = data.user;
-    const tweetContent = data.content.text;
-
-    let age = Date.now() - data.created_at;
-    age *= ( (1/1000) * (1/60) * (1/60) * (1/24) );
-    age = (function(age) {
-      if( age <= 30 ) {
-        age = Math.round(age);
-        return age === 1 ? age + ' day old' : age + ' days old';
-      }
-      if( age > 30 ) {
-        age /= 30;
-        if( age > 12 ) {
-          age /= 12;
-          age = Math.round(age);
-          return age === 1 ? age + ' year old' : age + ' years old';
-        }
-        age = Math.round(age);
-        return age === 1 ? age + ' month old' : age + ' months old';
-      };
-    })(age)
-
-
-    const tweet =
-    `<section class="tweet">
-      <header class="tweet__header">
-        <img src="${usr.avatars.regular}" />
-        <span class="tweet__user-name">${usr.name}</span>
-        <span class="tweet__user-account">${usr.handle}</span>
-      </header>
-      <article class="tweet__body">
-        <div>${tweetContent}</div>
-      </article>
-      <footer class="tweet__footer">
-        <div class="tweet__age">${age}</div>
-        <div class="tweet__actions">
-          <img src="/images/repost.png" alt="actions repost">
-          <img src="/images/flag.png" alt="actions flag">
-          <img src="/images/heart.png" alt="actions heart">
-        </div>
-      </footer>
-    </section>`
-
-    return tweet;
-  }
-
   // Test / driver code (temporary). Eventually will get this from the server.
   var tweetData = {
     "user": {
@@ -62,13 +13,29 @@ $(function() {
     "content": {
       "text": "If I have seen further it is by standing on the shoulders of giants"
     },
-    "created_at": 1461116232227
+    "created_at": 1508362385000
+  }
+
+  function createTweetElement(data) {
+    const tweet = {};
+    tweet.usr = data.user;
+    tweet.tweetBody = data.content.text;
+    const relativeMiliseconds = Date.now() - data.created_at;
+    tweet.created = moment(data.created_at).fromNow();;
+
+    //set to handlebars template
+    const source = $('#tweet-template').html();
+    var template = Handlebars.compile(source);
+    var html = template(tweet);
+    console.log(html);
+
+    return html;
   }
 
   var $tweet = createTweetElement(tweetData);
 
   // Test / driver code (temporary)
-  console.log($tweet); // to see what it looks like
+  //console.log($tweet); // to see what it looks like
   $('#tweets').append($tweet); // to add it to the page so we can make sure it's got all the right elements, classes, etc.
 
 });
