@@ -1,7 +1,7 @@
 .container {
 
   width: 450px;
-  height: 500px;
+  height: 100%;
   margin: 0 auto;
   background-color: white;
   padding-top: 140px;
@@ -19,7 +19,7 @@
 
 #tweet-box textarea {
   width: 100%;
-  height: 190px;
+  height: 90px;
 }
 
 #compose-tweet {
@@ -37,5 +37,102 @@ form .counter {
 #tweet-submit {
   cursor: pointer;
 }
+
+
+
+
+/*---------------------------------------------*/
+/*tweets*/
+
+.tweet {
+  margin: 20px 20px;
+  background: #eee;
+  border: 2px solid #aaa;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+}
+
+.tweet__header {
+  position: relative;
+  padding: 10px;
+}
+
+.tweet header img {
+  height: 40px;
+  width: 40px;
+  -webkit-border-radius: 5px;
+          border-radius: 5px;
+  border: 1px solid #aaa;
+}
+
+.tweet__user-account {
+  position: absolute;
+  right: 10px;
+}
+
+.tweet__user-name {
+  font-size: 1.7rem;
+  font-weight: 700;
+  position: relative;
+  bottom: 15px;
+}
+
+.tweet__body {
+  background: #FFF;
+  padding: 10px;
+  height: 80px;
+  border-bottom: 2px solid #eee;
+  display: flex;
+  -webkit-align-items: center;
+          align-items: center;
+}
+
+.tweet__body div {
+
+}
+
+.tweet__footer {
+  background: #FFF;
+  padding: 10px;
+}
+
+.tweet__age {
+  font-size: 0.8em;
+  font-weight: 700;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
