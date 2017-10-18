@@ -49,24 +49,14 @@
         <form action="/tweets" method="POST">
           <textarea id="tweet-input" name="text" placeholder="What are you humming about?"></textarea>
           <br>
-          <input id="tweet-submit" type="submit" value="Tweet">
+          <input id="tweet-submit" type="submit" value="Tweet" disabled="true">
           <span class="counter">140</span>
         </form>
       </section>
 
-      <section class="tweet">
-        <header class="tweet__header">
-          <img src="http://lorempixel.com/300/300" />
-          <span class="tweet__user-name">happy foo</span>
-          <span class="tweet__user-account">@hfoo</span>
-        </header>
-        <article class="tweet__body">
-          <div>A little petit tweet..</div>
-        </article>
-        <footer class="tweet__footer">
-          <div class="tweet__age">12 days ago</div>
-        </footer>
-      </section>
+      <div id="tweets">
+
+      </div>
 
       <section class="tweet">
         <header class="tweet__header">
@@ -79,6 +69,11 @@
         </article>
         <footer class="tweet__footer">
           <div class="tweet__age">10 days ago</div>
+          <div class="tweet__actions">
+            <img src="/images/repost.png" alt="actions repost">
+            <img src="/images/flag.png" alt="actions flag">
+            <img src="/images/heart.png" alt="actions heart">
+          </div>
         </footer>
       </section>
 

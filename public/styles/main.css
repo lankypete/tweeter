@@ -87,11 +87,8 @@ form .counter {
           align-items: center;
 }
 
-.tweet__body div {
-
-}
-
 .tweet__footer {
+  position: relative;
   background: #FFF;
   padding: 10px;
 }
@@ -100,6 +97,25 @@ form .counter {
   font-size: 0.8em;
   font-weight: 700;
 }
+
+.tweet__actions {
+  position: absolute;
+  right: 5px;
+  top: 10px;
+}
+
+.tweet__actions img {
+  height: 20px;
+  width: 20px;
+  opacity: 0;
+  transition: all .5s ease-in-out
+}
+
+.tweet__footer:hover img {
+  opacity: 1;
+}
+
+
 
 
 
