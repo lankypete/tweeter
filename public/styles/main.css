@@ -4,11 +4,12 @@
   height: 100%;
   margin: 0 auto;
   background-color: white;
-  padding-top: 140px;
+  padding-top: 110px;
 
 }
 
 #tweet-box {
+  display: none;
   margin: 0 20px;
   padding: 10px;
   background: #eee;
@@ -19,7 +20,7 @@
 
 #tweet-box textarea {
   width: 100%;
-  height: 90px;
+  height: 70px;
 }
 
 #compose-tweet {
@@ -35,7 +36,15 @@ form .counter {
 }
 
 #tweet-submit {
+  display: inline;
   cursor: pointer;
+}
+
+.tweet-box-warning {
+  display: inline-block;
+  color: tomato;
+  font-size: .85em;
+  font-weight: 600;
 }
 
 

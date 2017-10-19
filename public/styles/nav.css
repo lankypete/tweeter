@@ -1,5 +1,6 @@
 #nav-bar {
   position: fixed;
+  z-index: 10;
   background-color: #00a087;
   padding: 0 2em;
   width: 100%;
@@ -19,5 +20,30 @@
   line-height: 80px;
   white-space: nowrap;
   float: left;
+}
+
+#nav-bar .compose-btn {
+  opacity: .9;
+  float: right;
+  height: 50px;
+  margin: 15px;
+  width: 120px;
+  color: #111;
+  font-weight: 700;
+  background: #fff;
+  display: inline-block;
+  text-align: center;
+  line-height: 48px;
+  -webkit-border-radius: 5px;
+          border-radius: 5px;
+  border: 2px solid #ddd;
+  cursor: pointer;
+  transition: all .2s ease-out;
+}
+
+#nav-bar .compose-btn:hover {
+
+  opacity: 1;
+
 }
 

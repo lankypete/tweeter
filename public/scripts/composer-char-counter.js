@@ -10,9 +10,16 @@ $(function() {
     let color = count < 0 ? 'red' : 'black';
     counter.css({ color });
 
-    //disable or en
-    let disabled = count < 0 || count >= 140 ? true : false;
-    submit.prop({ disabled });
+    const $tweetWarning = $(".tweet-box-warning");
+    submit.prop('disabled', true)
+    if (charCount === 0) {
+      $tweetWarning.text('Tweet is Empty');
+    } else if (charCount > 140) {
+      $tweetWarning.text('Tweet can\'t be over 140 chars')
+    } else {
+      $tweetWarning.empty();
+      submit.prop('disabled', false)
+    }
   })
 
  });
