@@ -6,5 +6,9 @@ const db = {
   tweets: require("../data-files/initial-tweets")
 }
 
+console.log(db);
+
 module.exports = db;
+
+
 
