@@ -20,3 +20,8 @@ Tweeter is a simple, single-page Twitter clone.
 1. npm install
 2. create .env file with path /tweeter
 3. Enjoy :)
+
+
+# ScreenShots
+
+![Tweets](https://github.com/lankypete/tweeter/blob/master/screenshots/basic%20tweeter.png "You're Hovering!")
