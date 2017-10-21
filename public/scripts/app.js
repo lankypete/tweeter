@@ -7,7 +7,7 @@ $(function() {
     const relativeMiliseconds = Date.now() - data.created_at;
     tweet.created = moment(data.created_at).fromNow();;
 
-    //set to handlebars template
+    //set the handlebars template
     const source = $('#tweet-template').html();
     var template = Handlebars.compile(source);
     var html = template(tweet);
